@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ElectionDataService } from './election-data.service';
+import { DataService } from './data.service';
 
-describe('ElectionDataService', () => {
+describe('DataService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: ElectionDataService = TestBed.get(ElectionDataService);
+    const service: DataService = TestBed.get(DataService);
     expect(service).toBeTruthy();
   });
 });

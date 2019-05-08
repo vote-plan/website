@@ -9,15 +9,28 @@ import { NgHttpLoaderModule } from 'ng-http-loader';
 import { AppComponent } from './app.component';
 
 import { AppRoutingModule } from './app-routing.module';
-import { ElectionModule } from './election/election.module';
 import { AboutComponent } from './about/about.component';
 import { CatchAllComponent } from './catch-all/catch-all.component';
+import { ElectionsComponent } from './elections/elections.component';
+import { ElectionComponent } from './election/election.component';
+import { HouseComponent } from './house/house.component';
+import { HousesComponent } from './houses/houses.component';
+import { ElectoratesComponent } from './electorates/electorates.component';
+import { ElectorateComponent } from './electorate/electorate.component';
+import { CandidateComponent } from './candidate/candidate.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
-    CatchAllComponent
+    CatchAllComponent,
+    ElectionsComponent,
+    ElectionComponent,
+    HouseComponent,
+    HousesComponent,
+    ElectoratesComponent,
+    ElectorateComponent,
+    CandidateComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +39,6 @@ import { CatchAllComponent } from './catch-all/catch-all.component';
     HttpClientModule,
     NgHttpLoaderModule.forRoot(),
     NgbModule,
-    ElectionModule,
     AppRoutingModule,
   ],
   providers: [],

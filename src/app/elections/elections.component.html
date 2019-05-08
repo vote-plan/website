@@ -1,0 +1,10 @@
+<div *ngIf="elections$ | async as elections">
+  <p>
+    elections works!
+  </p>
+  <ul>
+    <li *ngFor="let election of elections">
+      <a [routerLink]="[election.id]">{{election.title}}</a>
+    </li>
+  </ul>
+</div>
