@@ -9,7 +9,7 @@ jobs:
       - restore_cache:
           key: v1-vote-plan-{{ .Branch }}-{{ checksum "package-lock.json" }}
       - run: npm install
-      - run: webdriver-manager update
+      - run: node node_modules/protractor/bin/webdriver-manager update  # ensure all the required webdrivers are installed
       - save_cache:
           key: v1-vote-plan-{{ .Branch }}-{{ checksum "package-lock.json" }}
           paths:
