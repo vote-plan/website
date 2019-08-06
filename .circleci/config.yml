@@ -9,6 +9,7 @@ jobs:
       - restore_cache:
           key: v1-vote-plan-{{ .Branch }}-{{ checksum "package-lock.json" }}
       - run: npm install
+      - run: webdriver-manager update
       - save_cache:
           key: v1-vote-plan-{{ .Branch }}-{{ checksum "package-lock.json" }}
           paths:
