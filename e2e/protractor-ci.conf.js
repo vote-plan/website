@@ -5,11 +5,6 @@
 const config = require('./protractor.conf').config;
 
 config.multiCapabilities = [{
-  browserName: 'firefox',
-  'moz:firefoxOptions': {
-    args: [ "--headless" ]
-  }
-}, {
   browserName: 'chrome',
   chromeOptions: {
     args: ['--headless', '--no-sandbox']
