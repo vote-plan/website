@@ -12,7 +12,7 @@ Preparing your vote beforehand takes the guess work out of filling out the ballo
 The website supports creating voting plans for more than one election.
 
 
-### Elections
+### Election
 
 Attributes:
 
@@ -34,18 +34,29 @@ Information from the browser could be used to initialise the filters.
 Once an election is selected, then the list of ballot papers for that election are shown.
 
 
-### Ballot papers
+### Assembly
 
 Attributes:
 
-- Chamber Name (required) (usually House or Representatives or Senate) (can filter by freetext search)
+- Assembly Name (required) (usually House or Representatives or Senate) (can filter by freetext search)
 - List of links as key pairs: title (key) = url (value)
 - Description (optional)
 
-Once a ballot paper is selected, then the list of candidates is shown.
+Once an assembly is selected, then the list of electorates is shown.
+
+### Electorate
+
+Attributes:
+
+- Name (required) (can filter by freetext search)
+- List of links as key pairs: title (key) = url (value)
+- Description (optional)
+- machine-readable description of the ballot paper layout
+
+Once an electorate is selected, the list of candidates is shown.
 
 
-### Candidates
+### Candidate
 
 Attributes:
 
@@ -60,7 +71,38 @@ Candidates can be ordered / ranked / selected depending on the requirements of t
 If possible, there may be real-time warnings if some set of candidates is not a formal vote.
 
 
-## Other Notes
+## Pages & URLs
+
+All pages except the 'Electorate' page are read-only.
+
+The 'Electorate' page is the main page where candidates can be arranged.
+
+- Home page - has a freetext search that allows selecting an election, assembly, electorate, candidate, or party.
+    - `/`, `/<lang-locale>`
+- Elections (list of elections) 
+    - `/elections`
+- Assemblies (Details about election and list of assemblies) 
+    - `/elections/<election id>/assemblies`
+- Assembly (Details about assembly and list of electorates)
+    - `/elections/<election id>/assemblies/<assembly id>`
+- Electorates (Details about assembly and list of electorates)
+    - `/elections/<election id>/assemblies/<assembly id>/electorates`
+- Electorate (Details about electorate and list of candidates)
+    - `/elections/<election id>/assemblies/<assembly id>/electorates/<electorate id>`
+- Candidates (Details about election and list of all candidates in election)
+    - `/elections/<election id>/candidates`
+- Parties (Details about election and list of parties and candidates in the parties, with independents)
+    - `/elections/<election id>/parties`
+- About (Information about the app, data sources, acknowledgements)
+    - `/about`
+
+
+## Website Features
+
+- Entirely in-browser, no server communication
+- Can add new data to the `data` repo, and the existing app will use it
+- App is translate-able and localised (language and/or localisation specified via url path or url querystring)
+- Can save candidate sets and load candidate sets (more than one set can be saved, can load from choice of saved sets)
 
 If possible, there is an option to validate that the current set of candidates is a formal vote.
 If it is not a formal vote, information about the reason why will be displayed.
@@ -76,16 +118,4 @@ The website must be https.
 
 It is possible to have more than one set of candidates. 
 The different sets can be saved locally (with a unique name chosen by the user) and loaded again.
-
-
-## Pages
-
-- Elections (list of elections)
-- Ballots (Details about election and list of ballots)
-- Ballot (Details about ballot and list of candidates for one chamber - this is the main page where candidates can be arranged) (only page that can be edited)
-- Candidates (Details about election and list of all candidates and parties in election)
-- Parties (Details about election and list of parties and candidates in the parties, with independents)
-- About (Information about the app, data sources, acknowledgements)
-
-
 
