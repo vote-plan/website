@@ -97,6 +97,20 @@ The 'Electorate' page is the main page where candidates can be arranged.
     - `/about`
 
 
+## Structure
+
+Use ng-bootstrap for bootstrap components.
+
+The Angular app is structured like this:
+- src/app
+    - domain (module)
+        - election, assembly, candidate, party (data classes)
+        - external-data, local-data, pdf-generate (services)
+    - ui-core (module)
+        - home, about (components)
+        - election,  assembly, candidate, party  (components)
+
+
 ## Website Features
 
 - Entirely in-browser, no server communication

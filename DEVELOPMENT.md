@@ -26,7 +26,33 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
+## Development
+
+Developing in Windows is flaky and useless, so will need to use a Virtual Machine.
 
 ## Build command
 
     $ ng build vote-plan --aot  --optimization --output-path ../vote-plan.github.io/build --prod --progress --extract-licenses --vendor-chunk
+
+## Generate Commands Used
+
+    $ ng g module Domain
+    $ ng g class domain/Election
+    $ ng g class domain/Assembly
+    $ ng g class domain/Candidate
+    $ ng g class domain/Party
+    $ ng g service domain/ExternalData
+    $ ng g service domain/LocalData
+    $ ng g service domain/PdfGenerate
+
+    $ ng g module CoreInterface
+    $ ng g component ui-core/Home
+    $ ng g component ui-core/About
+    $ ng g component ui-core/Election
+    $ ng g component ui-core/Assembly
+    $ ng g component ui-core/Candidate
+    $ ng g component ui-core/Party
+    
+
+    
+
